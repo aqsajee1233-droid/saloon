@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Beauty Salon | Beauty & Elegance</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #b65c79;
+    --rose: #f7e6eb;
+    --dark: #33252b;
+    --cream: #fffaf7;
+    --muted: #806f75;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img { width: 100%; display: block; object-fit: cover; }
+
+button { font-family: inherit; }
+
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.eyebrow {
+    color: var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* NAVIGATION */
+
+header {
+    background: rgba(255,250,247,.94);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #eadde0;
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.logo span {
+    display: block;
+    font: 9px "DM Sans", sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+    color: var(--dark);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    transition: color .3s;
+}
+
+.nav-links a:hover { color: var(--pink); }
+
+.nav-links .nav-cta {
+    background: var(--pink);
+    color: white;
+    padding: 13px 19px;
+    border-radius: 30px;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 27px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 730px;
+    padding: 130px 0 75px;
+    display: flex;
+    align-items: center;
+    background: #f8e9ed;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content {
+    animation: slideLeft 1s ease both;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(43px, 5.4vw, 72px);
+    font-weight: 500;
+    line-height: 1.12;
+    margin: 18px 0;
+}
+
+.hero h1 em {
+    color: var(--pink);
+    font-weight: 400;
+}
+
+.hero-content p {
+    max-width: 460px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--pink);
+    color: white;
+    padding: 15px 26px;
+    border-radius: 3px;
+    border: 1px solid var(--pink);
+    cursor: pointer;
+    transition: .3s ease;
+    font-size: 13px;
+    letter-spacing: .5px;
+}
+
+.btn:hover {
+    background: var(--dark);
+    border-color: var(--dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px #b65c7930;
+}
+
+.text-link {
+    color: var(--pink);
+    margin-left: 20px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 4px;
+}
+
+.hero-image {
+    position: relative;
+    animation: slideRight 1s ease both;
+}
+
+.hero-image img {
+    height: 510px;
+    border-radius: 180px 180px 5px 5px;
+    box-shadow: 20px 20px 0 #e9c5d1;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 25px;
+    left: -25px;
+    background: white;
+    padding: 18px 23px;
+    box-shadow: 0 10px 30px #42263215;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+/* TRUST STRIP */
+
+.trust-strip {
+    padding: 24px 0;
+    background: white;
+    border-bottom: 1px solid #f0e4e7;
+}
+
+.trust-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 18px;
+    text-align: center;
+}
+
+.trust-grid span {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+/* SERVICES */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #f0e3e7;
+    overflow: hidden;
+    transition: transform .4s, box-shadow .4s;
+}
+
+.service-card:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 20px 40px #4c26300d;
+}
+
+.service-card img {
+    height: 220px;
+    transition: transform .7s;
+}
+
+.service-card:hover img {
+    transform: scale(1.07);
+}
+
+.card-image { overflow: hidden; }
+
+.service-info { padding: 22px 18px; }
+
+.service-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.service-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 44px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.tags span {
+    color: var(--pink);
+    background: #fbedf1;
+    border-radius: 20px;
+    padding: 5px 8px;
+    font-size: 10px;
+}
+
+/* ABOUT */
+
+.about { background: #f8e9ed; }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.about-images img {
+    height: 290px;
+    border-radius: 3px;
+}
+
+.about-images img:last-child {
+    margin-top: 55px;
+}
+
+.about-content h2 {
+    font: 500 clamp(34px, 4vw, 48px)/1.2 "Playfair Display", serif;
+    margin: 15px 0 20px;
+}
+
+.about-content p {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.about-content ul {
+    list-style: none;
+    margin: 22px 0 30px;
+}
+
+.about-content li {
+    padding: 9px 0;
+    border-bottom: 1px solid #e9d5dc;
+    font-size: 14px;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.gallery-item {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background: var(--rose);
+}
+
+.gallery-item img {
+    height: 100%;
+    transition: transform .6s;
+}
+
+.gallery-item:hover img { transform: scale(1.08); }
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 18px 18px;
+    color: white;
+    background: linear-gradient(transparent, #24151dd9);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+}
+
+/* BOOKING */
+
+.booking {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.booking h2 {
+    font: 500 clamp(32px, 4vw, 49px) "Playfair Display", serif;
+    margin: 15px 0;
+}
+
+.booking p {
+    color: #d6c5cb;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+}
+
+.booking .eyebrow { color: #e9a8c0; }
+
+/* FOOTER */
+
+footer {
+    background: #251b20;
+    color: #d6c5cb;
+    padding: 45px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+footer h3 {
+    color: white;
+    font: 24px "Playfair Display", serif;
+    margin-bottom: 13px;
+}
+
+footer h4 { color: white; margin-bottom: 13px; }
+
+footer p, footer a {
+    font-size: 13px;
+    line-height: 2;
+    color: #d6c5cb;
+}
+
+footer a:hover { color: white; }
+
+.footer-bottom {
+    border-top: 1px solid #49363f;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 950px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-grid, .about-grid { gap: 35px; }
+    .hero-image img { height: 420px; }
+}
+
+@media (max-width: 650px) {
+    .section { padding: 70px 0; }
+
+    .navbar { min-height: 70px; }
+
+    .menu-toggle { display: block; }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        box-shadow: 0 12px 20px #0000000b;
+    }
+
+    .nav-links.active { display: flex; }
+
+    .nav-links .nav-cta { text-align: center; }
+
+    .hero { padding-top: 115px; }
+
+    .hero-grid, .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 { font-size: 46px; }
+
+    .hero-image { margin: 15px 10px 0; }
+
+    .hero-image img { height: 380px; }
+
+    .image-label { left: -10px; }
+
+    .services-grid { grid-template-columns: 1fr; }
+
+    .service-card img { height: 270px; }
+
+    .about-images img { height: 220px; }
+
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+    .gallery-item { height: 220px; }
+
+    .footer-grid { grid-template-columns: 1fr; gap: 25px; }
+
+    .text-link { display: inline-block; margin: 20px 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a class="logo" href="#home">
+            Glow Beauty Salon
+            <span>BEAUTY · CARE · ELEGANCE</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation" aria-expanded="false">
+            <span id="menuSymbol">☰</span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#gallery">Gallery</a>
+            <a class="nav-cta" href="#booking">Book Appointment</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="eyebrow">Welcome to Glow Beauty Salon</span>
+                <h1>Beauty that feels <em>uniquely you.</em></h1>
+                <p>
+                    Discover your beauty with our nail, makeup, skincare
+                    and hairstyling services. Every detail is designed
+                    to make your special moments unforgettable.
+                </p>
+                <a class="btn" href="#services">EXPLORE OUR SERVICES</a>
+                <a class="text-link" href="#about">Discover Our Salon</a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85"
+                    alt="Elegant beauty salon interior">
+                <div class="image-label">Your moment. Your beauty.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-strip">
+        <div class="container trust-grid">
+            <span>PERSONALIZED BEAUTY CARE</span>
+            <span>BEAUTY FOR EVERY OCCASION</span>
+            <span>YOUR STYLE, YOUR WAY</span>
+        </div>
+    </div>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">What We Offer</span>
+                <h2>Our Beauty Services</h2>
+                <p>
+                    From elegant nails to flawless makeup, find the
+                    right treatment for your personal style.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=650&q=80"
+                             alt="Professional nail art and extensions" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Nail Extensions</h3>
+                        <p>Elegant nail extensions and creative nail designs.</p>
+                        <div class="tags">
+                            <span>#NailExtensions</span><span>#NailArt</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=650&q=80"
+                             alt="Manicure and pedicure care" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Mani & Pedi</h3>
+                        <p>Refreshing hand and foot care for a polished look.</p>
+                        <div class="tags">
+                            <span>#Manicure</span><span>#Pedicure</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=650&q=80"
+                             alt="Professional makeup look" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Makeup</h3>
+                        <p>Beautiful makeup for parties and special events.</p>
+                        <div class="tags">
+                            <span>#MakeupArtist</span><span>#PartyMakeup</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=650&q=80"
+                             alt="Decorative henna design" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Henna / Mehndi</h3>
+                        <p>Beautiful henna designs for celebrations and events.</p>
+                        <div class="tags">
+                            <span>#Henna</span><span>#MehndiDesign</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=650&q=80"
+                             alt="Beauty and eye makeup" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Eyelash Extensions</h3>
+                        <p>Enhance your look with carefully styled lashes.</p>
+                        <div class="tags">
+                            <span>#LashExtensions</span><span>#LashStyle</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=650&q=80"
+                             alt="Relaxing facial skincare treatment" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Facial & Skincare</h3>
+                        <p>Relaxing skincare treatments tailored to your needs.</p>
+                        <div class="tags">
+                            <span>#Facial</span><span>#SkinCare</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=650&q=80"
+                             alt="Hair blow dry and styling" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Blow Dry</h3>
+                        <p>Smooth, bouncy hair with a salon-finished look.</p>
+                        <div class="tags">
+                            <span>#BlowDry</span><span>#HairCare</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card reveal">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=650&q=80"
+                             alt="Professional hairstyling" loading="lazy">
+                    </div>
+                    <div class="service-info">
+                        <h3>Hair Styling</h3>
+                        <p>Stylish hair looks for parties and memorable occasions.</p>
+                        <div class="tags">
+                            <span>#HairStyling</span><span>#PartyHair</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="container about-grid">
+            <div class="about-images reveal">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=650&q=80"
+                     alt="Beautiful salon interior" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=650&q=80"
+                     alt="Beauty makeup inspiration" loading="lazy">
+            </div>
+
+            <div class="about-content reveal">
+                <span class="eyebrow">About Our Salon</span>
+                <h2>A little time for yourself goes a long way.</h2>
+                <p>
+                    At Glow Beauty Salon, we believe beauty is personal.
+                    Our goal is to create a welcoming experience where
+                    you can relax, express your style and feel confident.
+                </p>
+                <ul>
+                    <li>Personalized beauty services</li>
+                    <li>Careful attention to every detail</li>
+                    <li>Styles for everyday looks and special occasions</li>
+                </ul>
+                <a class="btn" href="#booking">VISIT OUR SALON</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">Beauty Inspiration</span>
+                <h2>Our Beauty Gallery</h2>
+                <p>Explore beauty inspiration for your next salon visit.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=80"
+                         alt="Nail art inspiration" loading="lazy">
+                    <div class="gallery-caption">Nail Art</div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80"
+                         alt="Makeup inspiration" loading="lazy">
+                    <div class="gallery-caption">Makeup</div>
+                </div>
+
+                <div class="gallery-item reveal">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80"
+                         alt="Hair styling inspiration" loading="lazy">
+                    <div class="gallery-caption">Hair Styling</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container reveal">
+            <span class="eyebrow">Your Beauty Appointment</span>
+            <h2>Let's Make You Glow</h2>
+            <p>
+                Ready for a fresh new look? Contact us to discuss your
+                preferred service and arrange an appointment.
+            </p>
+            <button class="btn" id="bookButton" type="button">
+                BOOK ON WHATSAPP
+            </button>
+            <p id="bookingMessage" role="status" aria-live="polite"
+               style="margin-top:15px"></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h3>Glow Beauty Salon</h3>
+                <p>Your beauty, your style, your moment.</p>
+                <p>#BeautySalon #NailCare #Makeup #Henna #HairStyling</p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#services">Our Services</a></p>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#gallery">Gallery</a></p>
+            </div>
+
+            <div>
+                <h4>Our Services</h4>
+                <p><a href="#services">Nail Extensions</a></p>
+                <p><a href="#services">Makeup & Henna</a></p>
+                <p><a href="#services">Facial & Skincare</a></p>
+                <p><a href="#services">Hair Styling</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © <span id="year"></span> Glow Beauty Salon. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+// Mobile navigation
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const menuSymbol = document.getElementById("menuSymbol");
+
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuSymbol.textContent = isOpen ? "×" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuSymbol.textContent = "☰";
+    });
+});
+
+// Reveal elements when scrolling
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(function (element) {
+        observer.observe(element);
+    });
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("visible");
+    });
+}
+
+// WhatsApp booking
+document.getElementById("bookButton").addEventListener("click", function () {
+    // Replace this with your salon's WhatsApp number.
+    // Include country code, without + or spaces.
+    const phoneNumber = "923001234567";
+
+    const message =
+        "Hello Glow Beauty Salon! I would like to book a beauty appointment. Please share your available times and service prices.";
+
+    if (!/^\d{10,15}$/.test(phoneNumber)) {
+        document.getElementById("bookingMessage").textContent =
+            "Please add a valid WhatsApp number in the website code.";
+        return;
+    }
+
+    window.open(
+        "https://wa.me/" + phoneNumber + "?text=" +
+        encodeURIComponent(message),
+        "_blank",
+        "noopener,noreferrer"
+    );
+});
+
+// Automatically update copyright year
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
